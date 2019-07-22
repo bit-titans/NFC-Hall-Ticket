@@ -2,10 +2,20 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph" app:startDestination="@id/home3">
-    <fragment android:id="@+id/home3" android:name="com.bittitans.nfchallticket.Home" android:label="fragment_home"
+    <fragment android:id="@+id/home3" android:name="com.bittitans.nfchallticket.Home" android:label="NFC Hall Ticket"
               tools:layout="@layout/fragment_home">
         <action android:id="@+id/action_home3_to_scanFragment" app:destination="@id/scanFragment"/>
+        <action android:id="@+id/action_home3_to_signoutFragment" app:destination="@id/signoutFragment"/>
+        <action android:id="@+id/action_home3_to_noConnectionFragment" app:destination="@id/noConnectionFragment"/>
     </fragment>
     <fragment android:id="@+id/scanFragment" android:name="com.bittitans.nfchallticket.scanFragment"
-              android:label="fragment_scan" tools:layout="@layout/fragment_scan"/>
+              android:label="Candidate Identity" tools:layout="@layout/fragment_scan"/>
+    <fragment android:id="@+id/signoutFragment" android:name="com.bittitans.nfchallticket.signoutFragment"
+              android:label="Sign Out" tools:layout="@layout/fragment_signout">
+        <action android:id="@+id/action_signoutFragment_to_home3" app:destination="@id/home3"/>
+    </fragment>
+    <fragment android:id="@+id/noConnectionFragment" android:name="com.bittitans.nfchallticket.noConnectionFragment"
+              android:label="No Connection" tools:layout="@layout/fragment_no_connection">
+        <action android:id="@+id/action_noConnectionFragment_to_home3" app:destination="@id/home3"/>
+    </fragment>
 </navigation>
