@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "238550531651",
+    "firebase_url": "https://nfc-hall-ticket.firebaseio.com",
+    "project_id": "nfc-hall-ticket",
+    "storage_bucket": "nfc-hall-ticket.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238550531651:android:7fa4a64ae05d3bd3",
+        "android_client_info": {
+          "package_name": "com.bittitans.nfchallticket"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "238550531651-tcm9m5i31o7lc5cggitldpqdsf7d4mqb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bittitans.nfchallticket",
+            "certificate_hash": "ecbab8632b442a0900ebb5007c565eb0206d4c64"
+          }
+        },
+        {
+          "client_id": "238550531651-k2v6r8ae25pj15k3l7u8pl6smqsiilb6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlojz24CLn_k1qjYs68GyOY1rxxCWMauw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "238550531651-k2v6r8ae25pj15k3l7u8pl6smqsiilb6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
