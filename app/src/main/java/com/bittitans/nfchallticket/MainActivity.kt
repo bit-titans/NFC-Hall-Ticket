@@ -1,6 +1,13 @@
 package com.bittitans.nfchallticket
 
+import android.app.PendingIntent
 import android.content.Intent
+import android.content.IntentFilter
+import android.nfc.NdefMessage
+import android.nfc.NfcAdapter
+import android.nfc.NfcAdapter.getDefaultAdapter
+import android.nfc.Tag
+import android.nfc.tech.NfcF
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -14,7 +21,6 @@ import androidx.navigation.ui.NavigationUI
 import com.firebase.ui.auth.AuthUI
 
 class MainActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
