@@ -9,7 +9,10 @@
         <action android:id="@+id/action_home3_to_noConnectionFragment" app:destination="@id/noConnectionFragment"/>
     </fragment>
     <fragment android:id="@+id/scanFragment" android:name="com.bittitans.nfchallticket.scanFragment"
-              android:label="Candidate Identity" tools:layout="@layout/fragment_scan"/>
+              android:label="Candidate Identity" tools:layout="@layout/fragment_scan">
+        <argument android:name="id" app:argType="string" android:defaultValue="none"/>
+        <action android:id="@+id/action_scanFragment_to_home3" app:destination="@id/home3"/>
+    </fragment>
     <fragment android:id="@+id/signoutFragment" android:name="com.bittitans.nfchallticket.signoutFragment"
               android:label="Sign Out" tools:layout="@layout/fragment_signout">
         <action android:id="@+id/action_signoutFragment_to_home3" app:destination="@id/home3"/>

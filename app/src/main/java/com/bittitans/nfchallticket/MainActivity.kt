@@ -14,19 +14,25 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.firebase.ui.auth.AuthUI
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.database.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        if(intent.action == "android.nfc.action.TAG_DISCOVERED")
-            Toast.makeText(this,"Yeah!!!",Toast.LENGTH_LONG).show()
+        if(intent.action == "android.nfc.action.TAG_DISCOVERED") {
+            Toast.makeText(this, "NFC Tag Scanned", Toast.LENGTH_LONG).show()
+            val id = "ANNNA6761HN12H32"
+            var bundle = bundleOf("id" to id)
+            findNavController(R.id.nav_host_fragment).navigate(R.id.action_home3_to_scanFragment, bundle)
+        }
         val navController:NavController = Navigation.findNavController(this,R.id.nav_host_fragment)
         NavigationUI.setupActionBarWithNavController(this, navController)
     }
