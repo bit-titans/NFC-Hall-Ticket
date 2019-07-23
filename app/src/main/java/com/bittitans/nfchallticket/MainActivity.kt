@@ -19,11 +19,14 @@ import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.firebase.ui.auth.AuthUI
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        if(intent.action == "android.nfc.action.TAG_DISCOVERED")
+            Toast.makeText(this,"Yeah!!!",Toast.LENGTH_LONG).show()
         val navController:NavController = Navigation.findNavController(this,R.id.nav_host_fragment)
         NavigationUI.setupActionBarWithNavController(this, navController)
     }
