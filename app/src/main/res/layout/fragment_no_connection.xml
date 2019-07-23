@@ -10,7 +10,7 @@ android:background="@color/background">
             android:layout_height="match_parent">
 
         <ImageView
-                android:src="@android:drawable/btn_dialog"
+                android:src="@drawable/disconnected"
                 android:layout_width="142dp"
                 android:layout_height="159dp"
                 android:id="@+id/imageView3" android:layout_marginTop="8dp"
