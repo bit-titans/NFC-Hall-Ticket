@@ -8,10 +8,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import com.squareup.picasso.Picasso
+import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.fragment_scan.*
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
@@ -49,11 +51,25 @@ class scanFragment : Fragment() {
                 override fun onDataChange(p0: DataSnapshot) {
                     var name = p0.child("name").value
                     var usn = p0.child("usn").value
-                    var img = p0.child("image").value
-                    if (id != "none") {
-                        Picasso.get().load(img.toString()).into(imageView2);
+                    var storage = FirebaseStorage.getInstance()
+                    if(name!=null)
+                    {
+                        // Reference to an image file in Cloud Storage
+                        val storageReference = FirebaseStorage.getInstance().reference.child(name as String + ".jpg")
+
+// ImageView in your Activity
+                        val imageView = view.findViewById<ImageView>(R.id.imageView2)
+
+// Download directly from StorageReference using Glide
+// (See MyAppGlideModule for Loader registration)
+
+
+                        if (id != "none") {
+                            GlideApp.with(view /* context */)
+                                .load(storageReference)
+                                .into(imageView)
                         textView.setText("Name:$name \nUSN:$usn")
-                    }
+                    }}
                 }
             })
         }
