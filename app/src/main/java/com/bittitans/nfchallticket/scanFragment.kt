@@ -55,7 +55,7 @@ class scanFragment : Fragment() {
                     if(name!=null)
                     {
                         // Reference to an image file in Cloud Storage
-                        val storageReference = FirebaseStorage.getInstance().reference.child(name as String + ".jpg")
+                        val storageReference = FirebaseStorage.getInstance().reference.child(usn as String + ".jpg")
 
 // ImageView in your Activity
                         val imageView = view.findViewById<ImageView>(R.id.imageView2)

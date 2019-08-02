@@ -4,6 +4,7 @@ import android.app.PendingIntent
 import android.content.Intent
 import android.content.IntentFilter
 import android.nfc.NdefMessage
+import android.nfc.NdefRecord
 import android.nfc.NfcAdapter
 import android.nfc.NfcAdapter.getDefaultAdapter
 import android.nfc.Tag
@@ -25,11 +26,17 @@ import com.google.firebase.database.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        var message:String = "";
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        if(intent.action == "android.nfc.action.TAG_DISCOVERED") {
+        if(intent.action == "android.nfc.action.NDEF_DISCOVERED") {
             Toast.makeText(this, "NFC Tag Scanned", Toast.LENGTH_LONG).show()
-            val id = "ANNNA6761HN12H32"
+            intent.getParcelableArrayExtra(NfcAdapter.EXTRA_NDEF_MESSAGES)?.also { rawMessages ->
+                val messages: List<NdefMessage> = rawMessages.map { it as NdefMessage }
+                // Process the messages array.
+                message = String((messages.get(0).records[0].payload)).drop(3)
+            }
+            val id = message
             var bundle = bundleOf("id" to id)
             findNavController(R.id.nav_host_fragment).navigate(R.id.action_home3_to_scanFragment, bundle)
         }
