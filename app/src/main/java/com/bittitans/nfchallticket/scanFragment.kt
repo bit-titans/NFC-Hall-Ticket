@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
@@ -25,6 +26,10 @@ private const val ARG_PARAM2 = "param2"
 class scanFragment : Fragment() {
     private lateinit var auth: FirebaseAuth
     private lateinit var database: DatabaseReference
+    private var subs = arrayOfNulls<String>(8)
+    private var subs_name = arrayOfNulls<String>(8)
+    private var subs_date = arrayOfNulls<String>(8)
+    private var subs_time = arrayOfNulls<String>(8)
 
 
     override fun onCreateView(
@@ -70,12 +75,15 @@ class scanFragment : Fragment() {
                                 .load(storageReference)
                                 .into(imageView)
                         textView.setText("Name:$name \nUSN:$usn")
-                            var subs = arrayOfNulls<String>(8)
+
                             var i = 0
                             for(sub in p0.child("Subjects").children)
                             {
 
-                                subs[i++] = sub.child("code").value as String
+                                subs[i] = sub.child("code").value as String
+                                subs_name[i] = sub.child("name").value as String
+                                subs_date[i] = sub.child("date").value as String
+                                subs_time[i++] = sub.child("time").value as String
 
 
                             }
@@ -96,6 +104,10 @@ class scanFragment : Fragment() {
                             Sub6.setText(subs[5])
                             Sub7.setText(subs[6])
                             Sub8.setText(subs[7])
+                            PassSub.subcode = subs
+                            PassSub.subname = subs_name
+                            PassSub.subdate = subs_date
+                            PassSub.subtime = subs_time
                     }
                     }
 
@@ -105,4 +117,5 @@ class scanFragment : Fragment() {
             })
         }
     }
+
 }

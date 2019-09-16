@@ -12,6 +12,9 @@
               android:label="Candidate Identity" tools:layout="@layout/fragment_scan">
         <argument android:name="id" app:argType="string" android:defaultValue="none"/>
         <action android:id="@+id/action_scanFragment_to_home3" app:destination="@id/home3"/>
+        <action
+            android:id="@+id/action_scanFragment_to_subjectFragment"
+            app:destination="@id/subjectFragment" />
     </fragment>
     <fragment android:id="@+id/signoutFragment" android:name="com.bittitans.nfchallticket.signoutFragment"
               android:label="Sign Out" tools:layout="@layout/fragment_signout">
@@ -21,4 +24,9 @@
               android:label="No Connection" tools:layout="@layout/fragment_no_connection">
         <action android:id="@+id/action_noConnectionFragment_to_home3" app:destination="@id/home3"/>
     </fragment>
+    <fragment
+        android:id="@+id/subjectFragment"
+        android:name="com.bittitans.nfchallticket.subjectFragment"
+        android:label="fragment_subject"
+        tools:layout="@layout/fragment_subject" />
 </navigation>
