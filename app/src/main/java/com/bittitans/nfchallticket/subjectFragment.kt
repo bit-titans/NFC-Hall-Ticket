@@ -51,7 +51,7 @@ class subjectFragment : Fragment() {
         var intent: Intent = Intent(Intent.ACTION_INSERT)
         .setData(CalendarContract.Events.CONTENT_URI)
             .putExtra(CalendarContract.Events.TITLE, subname)
-            .putExtra(CalendarContract.Events.EVENT_LOCATION,"BIT" )
+            .putExtra(CalendarContract.Events.EVENT_LOCATION,"Banglore Institute of Technology" )
             .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME,calendar.getTime().getTime() )
             .putExtra(CalendarContract.EXTRA_EVENT_END_TIME,calendar.timeInMillis+(60*60*3000))
 

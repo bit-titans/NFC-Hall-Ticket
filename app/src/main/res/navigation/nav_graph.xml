@@ -27,6 +27,6 @@
     <fragment
         android:id="@+id/subjectFragment"
         android:name="com.bittitans.nfchallticket.subjectFragment"
-        android:label="fragment_subject"
+        android:label="Subject Details"
         tools:layout="@layout/fragment_subject" />
 </navigation>
