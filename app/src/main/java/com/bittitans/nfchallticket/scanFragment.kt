@@ -26,6 +26,7 @@ class scanFragment : Fragment() {
     private lateinit var auth: FirebaseAuth
     private lateinit var database: DatabaseReference
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -69,7 +70,37 @@ class scanFragment : Fragment() {
                                 .load(storageReference)
                                 .into(imageView)
                         textView.setText("Name:$name \nUSN:$usn")
-                    }}
+                            var subs = arrayOfNulls<String>(8)
+                            var i = 0
+                            for(sub in p0.child("Subjects").children)
+                            {
+
+                                subs[i++] = sub.child("code").value as String
+
+
+                            }
+                            Applied.visibility = View.VISIBLE
+                            Sub1.visibility = View.VISIBLE
+                            Sub2.visibility = View.VISIBLE
+                            Sub3.visibility = View.VISIBLE
+                            Sub4.visibility = View.VISIBLE
+                            Sub5.visibility = View.VISIBLE
+                            Sub6.visibility = View.VISIBLE
+                            Sub7.visibility = View.VISIBLE
+                            Sub8.visibility = View.VISIBLE
+                            Sub1.setText(subs[0])
+                            Sub2.setText(subs[1])
+                            Sub3.setText(subs[2])
+                            Sub4.setText(subs[3])
+                            Sub5.setText(subs[4])
+                            Sub6.setText(subs[5])
+                            Sub7.setText(subs[6])
+                            Sub8.setText(subs[7])
+                    }
+                    }
+
+
+
                 }
             })
         }
