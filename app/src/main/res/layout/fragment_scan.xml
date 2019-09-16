@@ -54,8 +54,8 @@ android:background="@color/background">
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.906"
-            app:layout_constraintStart_toEndOf="@+id/Sub5"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/Sub4"
             app:layout_constraintTop_toBottomOf="@+id/Sub4"
             app:layout_constraintVertical_bias="0.21" />
 
@@ -87,8 +87,8 @@ android:background="@color/background">
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.906"
-            app:layout_constraintStart_toEndOf="@+id/Sub7"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/Sub6"
             app:layout_constraintTop_toBottomOf="@+id/Sub6"
             app:layout_constraintVertical_bias="0.333" />
 
@@ -135,7 +135,7 @@ android:background="@color/background">
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.416"
+            app:layout_constraintHorizontal_bias="0.187"
             app:layout_constraintStart_toStartOf="@+id/Sub1"
             app:layout_constraintTop_toBottomOf="@+id/Applied"
             app:layout_constraintVertical_bias="0.197" />
@@ -167,8 +167,8 @@ android:background="@color/background">
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.906"
-            app:layout_constraintStart_toEndOf="@+id/Sub3"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/Sub2"
             app:layout_constraintTop_toBottomOf="@+id/Sub2"
             app:layout_constraintVertical_bias="0.193" />
 
@@ -184,9 +184,8 @@ android:background="@color/background">
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.467"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintVertical_bias="0.872" />
+            app:layout_constraintVertical_bias="0.858" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
